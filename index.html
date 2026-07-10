@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css">
+    <title>CSS Templates</title>
+    <script src="/src/main.js"> </script>
+  </head>
+  <body>
+    <div id="app" class="main">
+      <h1 class="banner">
+        <a id="hamburger-toggle">&#9776;</a>
+        <nav class="hamburger hidden">
+          <a class="active" id="nav-home">Home</a>
+          <a id="nav-form">Form</a>
+          <a id="nav-list">List</a>
+          <a id="nav-table">Table</a>
+          <a id="nav-modal">Modal</a>
+        </nav>Banner
+      <span id="dark-toggle"><a>&#9681;</a></span></h1>
+      
+      <nav class="tabs">
+        <a class="active" id="tab-home">Home</a>
+        <a id="tab-form">Form</a>
+        <a id="tab-list">List</a>
+        <a id="tab-table">Table</a>
+        <a id="tab-modal">Modal</a>
+      </nav>
+
+      <div id="home-page" class="content">
+        <h2>Home</h2>
+        <div class="flex">
+          <div class="card">
+            <h3>Feature 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna 
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              Duis aute irure dolor in reprehenderit in voluptate velit 
+              esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Feature 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna 
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              Duis aute irure dolor in reprehenderit in voluptate velit 
+              esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+
+          </div>
+          <div class="card">
+            <h3>Feature 3</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna 
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              Duis aute irure dolor in reprehenderit in voluptate velit 
+              esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+
+          </div>
+          <div class="card">
+            <h3>Feature 4</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna 
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+              ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              Duis aute irure dolor in reprehenderit in voluptate velit 
+              esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+
+          </div>
+        </div>
+
+        
+      </div>
+      <div id="form-page" class="hidden content">
+        <h2>Form</h2>
+        <form>
+        <label for="text-input" class="above">Text<spam class="required"> * Required</spam></label>
+        <input type="text" name="text" id="text-input" />
+
+        <label for="number-input" class="above">Number</label>
+        <input type="number" name="number" id="number-input" />
+
+        <label for="password-input" class="above">Password</label>
+        <input type="password" name="password" id="password-input" />
+
+        <label for="select-input" class="above">Select</label>
+        <select>
+          <option>White</option>
+          <option>Black</option>
+          <option>Red</option>
+          <option>Yellow</option>
+          <option>Lime</option>
+          <option>Green</option>
+          <option>Aqua</option>
+          <option>Teal</option>
+          <option>Blue</option>
+          <option>Navy</option>
+          <option>Fuchsia</option>
+          <option>Purple</option>
+        </select>
+
+        <label for="textarea-input" class="above">Text Area</label>
+        <textarea></textarea>
+        <div>
+          <input type="submit" value="Submit" class="button" id="submit" />
+          <div id="result"></div>
+        </div>
+        </form>
+      </div>
+      <div id="list-page" class="hidden content">
+        <h2>List</h2>
+        <ul class="ruled">
+          <li>White</li>
+          <li>Black</li>
+          <li>Red</li>
+          <li>Yellow</li>
+          <li>Lime</li>
+          <li>Green</li>
+          <li>Aqua</li>
+          <li>Teal</li>
+          <li>Blue</li>
+          <li>Navy</li>
+          <li>Fuchsia</li>
+          <li>Purple</li>
+        </ul>
+
+      </div>
+      <div id="table-page" class="hidden content">
+        <h2>Table</h2>
+        <table class="ruled">
+          <thead>
+            <tr><th>Name</th><th>Hex</th><th class="right">Example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>White</td><td>#FFFFFF</td><td class="right" style="color:White">&#9632;</td></tr>
+            <tr><td>Black</td><td>#000000</td><td class="right" style="color:Black">&#9632;</td></tr>
+            <tr><td>Red</td><td>#FF0000</td><td class="right" style="color:Red">&#9632;</td></tr>
+            <tr><td>Yellow</td><td>#FFFF00</td><td class="right" style="color:Yellow">&#9632;</td></tr>
+            <tr><td>Lime</td><td>#00FF00</td><td class="right" style="color:Lime">&#9632;</td></tr>
+            <tr><td>Green</td><td>#008000</td><td class="right" style="color:Green">&#9632;</td></tr>
+            <tr><td>Aqua</td><td>#00FFFF</td><td class="right" style="color:Aqua">&#9632;</td></tr>
+            <tr><td>Teal</td><td>#008080</td><td class="right" style="color:Teal">&#9632;</td></tr>
+            <tr><td>Blue</td><td>#0000FF</td><td class="right" style="color:Blue">&#9632;</td></tr>
+            <tr><td>Navy</td><td>#000080</td><td class="right" style="color:Navy">&#9632;</td></tr>
+            <tr><td>Fuchsia</td><td>#FF00FF</td><td class="right" style="color:Fuchsia">&#9632;</td></tr>
+            <tr><td>Purple</td><td>#800080</td><td class="right" style="color:Purple">&#9632;</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="modal-page" class="hidden content">
+        <h2>Modal</h2>
+        <a id="open-modal">Open Modal</a>
+      </div>
+<!--
+      Active
+      Alert
+      Banner
+      Breadcrumb
+      Button
+      Card
+      Code
+      Confirm
+      Disabled
+      Error
+      FitHeight
+      FitWidth
+      Flex
+      Hamburger
+      Hero
+      Hidden
+      Hover
+      Label
+      Loader
+      Main
+      Modal
+      Nav
+      Ruled
+      Scroll
+      Submit
+      Success
+      Tabs
+      Tip
+      Upload
+    -->
+    </div>
+
+
+
+    <div class="modal hidden" tabindex="-1" id="modal">
+      <div class="modal-body">
+        <h2>Modal</h2>
+        <button class="x"> &times; </button>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna 
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit 
+            esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
