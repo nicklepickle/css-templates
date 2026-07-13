@@ -1,3 +1,5 @@
+/* ~~~ Top Level and Element Styles ~~~ */
+
 @font-face {
     font-family: 'Banner';
     src: url('/chango.ttf');
@@ -35,6 +37,40 @@ a:hover {
   text-decoration: underline;
 }
 
+h2 {
+  color: var(--accent-color);
+}
+
+h3 {
+  margin:0;
+}
+
+pre {
+  border:1px solid #777;
+  padding:var(--padding);
+  border-radius: 4px;
+  overflow-x:scroll;
+}
+
+table {
+  border-collapse: collapse;
+  width:100%;
+  max-width:720px;
+}
+
+td, th {
+  padding: 6px;
+  text-align:left;
+}
+
+/* ~~~ Content Styles ~~~ */
+
+.main {
+  background-color:var(--background-color);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .banner {
   font-family: Banner;
   font-size: 42px;
@@ -46,12 +82,6 @@ a:hover {
   /*background-color:var(--accent-color); */
   padding-bottom:32px;
 
-}
-
-.main {
-  background-color:var(--background-color);
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .content {
@@ -73,6 +103,36 @@ a:hover {
   flex-wrap:wrap;
 }
 
+.card {
+  margin-right: var(--padding);
+  margin-bottom: var(--padding);
+  padding:  var(--padding);
+  width: 360px;
+  border-radius: 4px;
+  border: 1px solid SlateGray;
+  min-height:216px;
+}
+
+table.ruled td, table.ruled th {
+  border-bottom: 1px solid var(--link-color);
+}
+
+ul.ruled {
+  list-style: none;
+  padding: 0;
+  width:300px;
+}
+
+ul.ruled li {
+  padding: 6px;
+  border-top: 1px solid var(--link-color);
+}
+
+ul.ruled li:last-of-type {
+  border-bottom: 1px solid var(--link-color);
+}
+
+/* ~~~ Navigation Styles ~~~ */
 
 .tabs {
   display:flex;
@@ -130,23 +190,22 @@ a:hover {
   text-decoration:none;
 }
 
-.card {
-  margin-right: var(--padding);
-  margin-bottom: var(--padding);
-  padding:  var(--padding);
-  width: 360px;
-  border-radius: 4px;
-  border: 1px solid SlateGray;
-  min-height:216px;
+ul.bread-crumb {
+  list-style: none;
+  padding: 0;
 }
 
-h2 {
-  color: var(--accent-color);
+ul.bread-crumb li {
+  display:inline;
+  margin-right:4px;
 }
 
-h3 {
-  margin:0;
+ul.bread-crumb li:not(:last-child) a::after {
+  content: "\00BB"; 
+  margin-left:10px;
 }
+
+/* ~~~ Forms and Inputs ~~~ */
 
 input[type=text], input[type=email], input[type=password], input[type=number],
 input[type=datetime], input[type=datetime-local], select, textarea {
@@ -202,6 +261,46 @@ label.above {
   cursor: default;
 }
 
+.required {
+  font-size:12px;
+  font-weight:normal;
+  color:#900;
+  position:relative;
+  left:220px;
+  margin-top:3px;
+}
+
+.success {
+  font-weight:bold;
+  color:light-dark(#090, #0D0)
+}
+
+.error {
+  font-weight:bold;
+  color:light-dark(#900, #D00)
+}
+
+.loading {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 1.1px;
+  background: conic-gradient(#0000 10%,var(--link-color)) content-box;
+  mask: repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg), radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 calc(100% - 9px));
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: loading-anim 1s infinite steps(10);
+  margin: 20px 0px 20px 120px;
+}
+
+@keyframes loading-anim {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* ~~~ Modal Styles ~~~ */
+
 .modal {
   position: fixed;
   z-index: 1;
@@ -256,74 +355,7 @@ label.above {
   clear:both;
 }
 
-table {
-  border-collapse: collapse;
-  width:100%;
-  max-width:720px;
-
-}
-
-td, th {
-  padding: 6px;
-  text-align:left;
-}
-
-table.ruled td, table.ruled th {
-  border-bottom: 1px solid var(--link-color);
-}
-
-ul.ruled {
-  list-style: none;
-  padding: 0;
-  width:300px;
-}
-
-ul.ruled li {
-  padding: 6px;
-  border-top: 1px solid var(--link-color);
-}
-
-ul.ruled li:last-of-type {
-  border-bottom: 1px solid var(--link-color);
-}
-
-.required {
-  font-size:12px;
-  font-weight:normal;
-  color:#900;
-  position:relative;
-  left:220px;
-  margin-top:3px;
-}
-
-.success {
-  font-weight:bold;
-  color:light-dark(#090, #0D0)
-}
-
-.error {
-  font-weight:bold;
-  color:light-dark(#900, #D00)
-}
-
-.loading {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  padding: 1.1px;
-  background: conic-gradient(#0000 10%,var(--link-color)) content-box;
-  mask: repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg), radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 calc(100% - 9px));
-  -webkit-mask-composite: destination-in;
-  mask-composite: intersect;
-  animation: loading-anim 1s infinite steps(10);
-  margin: 20px 0px 20px 120px;
-}
-
-@keyframes loading-anim {
-  to {
-    transform: rotate(1turn);
-  }
-}
+/* ~~~ Specific Elements by Id ~~~ */
 
 #dark-toggle {
   float:right;

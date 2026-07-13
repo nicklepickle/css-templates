@@ -16,7 +16,7 @@
           <a id="nav-form">Form</a>
           <a id="nav-list">List</a>
           <a id="nav-table">Table</a>
-          <a id="nav-modal">Modal</a>
+          <a id="nav-more">More</a>
         </nav>Banner
       <span id="dark-toggle"><a>&#9681;</a></span></h1>
       
@@ -25,7 +25,7 @@
         <a id="tab-form">Form</a>
         <a id="tab-list">List</a>
         <a id="tab-table">Table</a>
-        <a id="tab-modal">Modal</a>
+        <a id="tab-more">More</a>
       </nav>
 
       <div id="home-page" class="content">
@@ -80,7 +80,6 @@
           </div>
         </div>
 
-        
       </div>
       <div id="form-page" class="hidden content">
         <h2>Form</h2>
@@ -158,44 +157,31 @@
           </tbody>
         </table>
       </div>
-      <div id="modal-page" class="hidden content">
+      <div id="more-page" class="hidden content">
+        <h2>Bread Crumb</h2>
+        <ul class="bread-crumb">
+          <li><a href="/">Home</a></li>
+          <li><a>More</a></li>
+          <li><a href="#code-block">Code</a></li>
+        </ul>
         <h2>Modal</h2>
         <a id="open-modal">Open Modal</a>
+        <h2 id="code-block">Code</h2>
+        <pre>
+:root {
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  text-rendering: optimizeLegibility;
+  --color:light-dark(Black, White);
+  --link-color:light-dark(DodgerBlue, DodgerBlue);
+  --background-color:light-dark(White, Black);
+  --accent-color:Peru;
+  --padding:10px;
+  --size:16px
+}
+        </pre>
       </div>
-<!--
-      Active
-      Alert
-      Banner
-      Breadcrumb
-      Button
-      Card
-      Code
-      Confirm
-      Disabled
-      Error
-      FitHeight
-      FitWidth
-      Flex
-      Hamburger
-      Hero
-      Hidden
-      Hover
-      Label
-      Loader
-      Main
-      Modal
-      Nav
-      Ruled
-      Scroll
-      Submit
-      Success
-      Tabs
-      Tip
-      Upload
-    -->
     </div>
-
-
 
     <div class="modal hidden" tabindex="-1" id="modal">
       <div class="modal-body">
