@@ -1,6 +1,6 @@
 window.addEventListener('load',() => {
     let current = 'home-page';
-    const tabs = document.querySelectorAll('nav.tabs');
+    const tabs = document.querySelectorAll('nav.tabs a');
     const menu = document.querySelector('.hamburger');
 
     tabs.forEach(tab => {
