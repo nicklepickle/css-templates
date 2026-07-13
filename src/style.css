@@ -264,7 +264,7 @@ label.above {
 .required {
   font-size:12px;
   font-weight:normal;
-  color:#900;
+  color:light-dark(#900, #D00);
   position:relative;
   left:220px;
   margin-top:3px;
@@ -373,7 +373,7 @@ label.above {
   font-size:30px;
   color:#fff;
   float:left;
-  margin:6px 16px 0px 6px;
+  margin:16px;
   
 }
 
