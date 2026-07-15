@@ -5,7 +5,7 @@
     src: url('/chango.ttf');
     font-weight: normal;
     font-style: normal;
-    font-display: swap; /* Prevents invisible text while loading */
+    font-display: swap; 
 }
 
 :root {
@@ -15,7 +15,8 @@
   --color:light-dark(Black, White);
   --link-color:light-dark(DodgerBlue, DodgerBlue);
   --background-color:light-dark(White, Black);
-  --accent-color:Peru;
+  --accent-color: Peru;  /*Brown; SeaGreen; RoyalBlue; ; */
+  --grad-color:oklch(from var(--accent-color) calc(l * 0.8) c h);
   --padding:10px;
   --size:16px
 }
@@ -78,10 +79,18 @@ td, th {
   margin:0;
   color:White;
   padding:var(--padding);
-  background: linear-gradient(oklch(from var(--accent-color) calc(l * 0.8) c h) 0%, var(--accent-color) 80%);
+  background: linear-gradient(var(--grad-color) 0%, var(--accent-color) 80%);
   /*background-color:var(--accent-color); */
-  padding-bottom:32px;
+  padding-bottom:calc(var(--padding) + 2px)
 
+}
+
+.banner a {
+  color:#fff;
+}
+
+.banner a:hover {
+  text-decoration:none;
 }
 
 .content {
@@ -98,9 +107,44 @@ td, th {
   text-align:right;
 }
 
+.center {
+  text-align:center;
+}
+
 .flex {
   display:flex;
   flex-wrap:wrap;
+}
+
+.hero {
+  min-height:600px;
+  background:  linear-gradient(var(--accent-color) 0%, light-dark(White, Black)  25%);
+  padding-left:calc(50% - 250px)
+}
+
+.hero h1 {
+  margin-top:0px;
+  font-size:50px;
+  max-width:500px;
+  padding-top:100px;
+  line-height:50px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.hero p, .hero div {
+  max-width:500px;
+  text-align:center;
+}
+
+.shadow {
+  text-shadow: 0 0 3px var(--grad-color), 0 0 3px var(--grad-color), 0 0 3px var(--accent-color), 0 0 3px var(--accent-color); 
+
+}
+
+.arrow {
+  margin-left:8px;
+  font-size:22px;
 }
 
 .card {
@@ -113,6 +157,11 @@ td, th {
   min-height:216px;
 }
 
+.card img {
+  float:left; 
+  margin-right:var(--padding);
+}
+
 table.ruled td, table.ruled th {
   border-bottom: 1px solid var(--link-color);
 }
@@ -120,7 +169,7 @@ table.ruled td, table.ruled th {
 ul.ruled {
   list-style: none;
   padding: 0;
-  width:300px;
+  width:320px;
 }
 
 ul.ruled li {
@@ -136,7 +185,6 @@ ul.ruled li:last-of-type {
 
 .tabs {
   display:flex;
-  margin-top: -20px;
   background-color:var(--accent-color);
   clear:both;
 }
@@ -239,7 +287,7 @@ label.above {
   font-size: var(--size);
   background-color: var(--link-color);
   color: #fff;
-  border: 1px solid oklch(from var(--link-color) calc(l * 0.7) c h);
+  border: 1px solid oklch(from var(--link-color) calc(l * 0.8) c h);
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 4px;
@@ -361,11 +409,6 @@ label.above {
   float:right;
   font-size:24px;
   margin:14px;
-}
-
-#dark-toggle a {
-  color:#fff;
-  text-decoration:none;
 }
 
 #hamburger-toggle {

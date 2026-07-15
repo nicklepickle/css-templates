@@ -1,43 +1,57 @@
+
+
 window.addEventListener('load',() => {
     let current = 'home-page';
-    const tabs = document.querySelectorAll('nav.tabs a');
+    const tabs = document.querySelectorAll('#tabs a');
     const menu = document.querySelector('.hamburger');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click',(e) => {
-            const id = e.target.id.replace('tab-','') + '-page';
-            const active = document.querySelectorAll('.active');
-            active.forEach(a => a.classList.remove('active'))
-            e.target.classList.add('active');
-            document.getElementById(current).classList.add('hidden');
-            document.getElementById(id).classList.remove('hidden');
-            current = id;
-        })
-    })
-    
     const links = document.querySelectorAll('nav.hamburger a');
-    links.forEach(link => {
-        link.addEventListener('click',(e) => {
-            const id = e.target.id.replace('nav-','') + '-page';
-            const active = document.querySelectorAll('.active');
-            active.forEach(a => a.classList.remove('active'));
-
-            document.getElementById('tab-' + id.replace('-page','')).classList.add('active');
-
-            document.getElementById(current).classList.add('hidden');
-            document.getElementById(id).classList.remove('hidden');
-            menu.classList.add('hidden');
-            current = id;
-        })     
-    })
-
     const toggle = document.querySelector('#dark-toggle a');
+
+    const show = (id) => {
+        const active = document.querySelectorAll('.active');
+        const tab = document.getElementById('tab-' + id.replace('-page',''));
+        active.forEach(a => a.classList.remove('active'));
+        if(tab) {
+            tab.classList.add('active');
+        }
+        document.getElementById(current).classList.add('hidden');
+        document.getElementById(id).classList.remove('hidden');
+        menu.classList.add('hidden');
+
+        const tabs = document.getElementById('tabs');
+        if (id == 'home-page') {
+            tabs.classList.remove('tabs')
+            tabs.classList.add('hidden')
+        }
+        else {
+            tabs.classList.remove('hidden')
+            tabs.classList.add('tabs')
+
+        }
+
+        current = id;
+    }    
+
+    tabs.forEach(tab => 
+        tab.addEventListener('click',(e) =>
+        show(e.target.id.replace('tab-','') + '-page')))
+    
+    links.forEach(link => 
+        link.addEventListener('click',(e) => 
+        show(e.target.id.replace('nav-','') + '-page')))
+
+
     toggle.addEventListener('click', (e) => {
         const root = document.querySelector(":root");
         let colorScheme = root.style.getPropertyValue('color-scheme');
         colorScheme = (colorScheme == 'dark' ? 'light' : 'dark');
         root.style.setProperty('color-scheme', colorScheme)
     })
+
+    document.getElementById('banner-link').addEventListener('click', (e) => show('home-page'));
+    document.getElementById('hero-link').addEventListener('click', (e) => show('card-page'));
+
+    
 
     document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault();

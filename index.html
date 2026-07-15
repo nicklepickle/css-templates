@@ -11,29 +11,42 @@
     <div id="app" class="main">
       <a id="hamburger-toggle">&#9776;</a>
       <nav class="hamburger hidden">
-        <a class="active" id="nav-home">Home</a>
+        <a id="nav-home">Home</a>
+        <a id="nav-card">Cards</a>
         <a id="nav-form">Form</a>
         <a id="nav-list">List</a>
         <a id="nav-table">Table</a>
         <a id="nav-more">More</a>
       </nav>
 
-      <h1 class="banner">Banner<span id="dark-toggle"><a>&#9681;</a></span></h1>
+      <h1 class="banner "><a id="banner-link">Banner</a><span id="dark-toggle"><a>&#9681;</a></span></h1>
       
-      <nav class="tabs">
-        <a class="active" id="tab-home">Home</a>
+      <nav class="hidden" id="tabs">
+        <!--<a class="active" id="tab-home">Home</a>-->
+        <a id="tab-card">Cards</a>
         <a id="tab-form">Form</a>
         <a id="tab-list">List</a>
         <a id="tab-table">Table</a>
         <a id="tab-more">More</a>
       </nav>
 
-      <div id="home-page" class="content">
-        <h2>Home</h2>
+      <div id="home-page" class="content hero">
+        <h1 class="shadow">Content to introduce your stylish project</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <p>
+          <br /><a class="button" id="hero-link">Learn More<span class="arrow">&raquo;</span></a>
+        </p>
+      </div>
+      <div id="card-page" class="hidden content">
+        <h2>Cards</h2>
         <div class="flex">
           <div class="card">
             <h3>Feature 1</h3>
             <p>
+              <img src="/css3.svg" style="width:64px;" />
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
               sed do eiusmod tempor incididunt ut labore et dolore magna 
               aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
@@ -45,6 +58,7 @@
           <div class="card">
             <h3>Feature 2</h3>
             <p>
+              <img src="/vite.svg" style="width:70px;" />
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
               sed do eiusmod tempor incididunt ut labore et dolore magna 
               aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
