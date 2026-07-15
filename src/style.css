@@ -70,6 +70,7 @@ td, th {
   background-color:var(--background-color);
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 100dvh; 
 }
 
 .banner {
@@ -81,7 +82,7 @@ td, th {
   padding:var(--padding);
   background: linear-gradient(var(--grad-color) 0%, var(--accent-color) 80%);
   /*background-color:var(--accent-color); */
-  padding-bottom:calc(var(--padding) + 2px)
+  padding-bottom:calc(var(--padding) + 10px)
 
 }
 
