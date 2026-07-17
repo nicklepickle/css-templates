@@ -1,8 +1,8 @@
 /* ~~~ Top Level and Element Styles ~~~ */
 
 @font-face {
-    font-family: 'Banner';
-    src: url('/chango.ttf');
+    font-family: 'chango';
+    src: url('/chango.ttf'); 
     font-weight: normal;
     font-style: normal;
     font-display: swap; 
@@ -77,7 +77,7 @@ td, th {
 }
 
 .banner {
-  font-family: Banner;
+  font-family: chango;
   font-size: 42px;
   font-weight:normal;
   margin:0;
@@ -179,7 +179,7 @@ table.ruled td, table.ruled th {
   border-bottom: 1px solid  #666;
 }
 
-table.hover-row tbody tr:hover {
+table.hover-row tbody tr:hover, ul.hover-row li:hover {
     background-color: light-dark(#DDD, #444);
     cursor: pointer;
 }
@@ -234,7 +234,7 @@ ul.ruled li:last-of-type {
 .hamburger {
   background-color:var(--background-color);
   position:absolute;
-  top:72px;
+  top:80px;
   z-index:999;
   width:200px;
   border: 1px solid var(--border-color);

@@ -1,5 +1,3 @@
-
-
 window.addEventListener('load',() => {
     let current = 'home-page';
     const tabs = document.querySelectorAll('#tabs a');
@@ -8,11 +6,8 @@ window.addEventListener('load',() => {
     const toggle = document.querySelector('#dark-toggle a');
     const rows = document.querySelectorAll('tbody tr');
 
-    const setAccent = (c) => {
-    }
-
-
     const show = (id) => {
+        const tabs = document.getElementById('tabs');
         const active = document.querySelectorAll('.active');
         const tab = document.getElementById('tab-' + id.replace('-page',''));
         active.forEach(a => a.classList.remove('active'));
@@ -23,7 +18,6 @@ window.addEventListener('load',() => {
         document.getElementById(id).classList.remove('hidden');
         menu.classList.add('hidden');
 
-        const tabs = document.getElementById('tabs');
         if (id == 'home-page') {
             tabs.classList.remove('tabs')
             tabs.classList.add('hidden')
@@ -31,7 +25,6 @@ window.addEventListener('load',() => {
         else {
             tabs.classList.remove('hidden')
             tabs.classList.add('tabs')
-
         }
 
         current = id;
@@ -39,11 +32,11 @@ window.addEventListener('load',() => {
 
     tabs.forEach(tab => 
         tab.addEventListener('click',(e) =>
-        show(e.target.id.replace('tab-','') + '-page')))
+            show(e.target.id.replace('tab-','') + '-page')))
     
     links.forEach(link => 
         link.addEventListener('click',(e) => 
-        show(e.target.id.replace('nav-','') + '-page')))
+            show(e.target.id.replace('nav-','') + '-page')))
 
 
     toggle.addEventListener('click', (e) => {
@@ -57,16 +50,12 @@ window.addEventListener('load',() => {
         const root = document.querySelector(":root");
         row.addEventListener('click', (e) => {
             let color = e.currentTarget.id.replace('row-', '');
-            //console.log(color);
-            
             root.style.setProperty('--accent-color', color);
         })
     })
 
     document.getElementById('banner-link').addEventListener('click', (e) => show('home-page'));
     document.getElementById('hero-link').addEventListener('click', (e) => show('card-page'));
-
-    
 
     document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault();
@@ -83,7 +72,6 @@ window.addEventListener('load',() => {
         result.classList.add('loading');
         result.classList.remove('error');
         submit.disabled = true;
-
 
         setTimeout(() => {
             submit.disabled = false;
@@ -114,6 +102,9 @@ window.addEventListener('load',() => {
         }
     })
 
+    let months = [];
+    for(let i=0; i<12; i++)
+        months[i] = new Date(2000, i, 1).toLocaleString('en-US', {month:'long'}); 
 
-
+    document.getElementById('months').innerHTML = months.map((m) => `<li>${m}</li>`).join('');
 })
