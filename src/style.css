@@ -15,8 +15,10 @@
   --color:light-dark(Black, White);
   --link-color:light-dark(DodgerBlue, DodgerBlue);
   --background-color:light-dark(White, Black);
-  --accent-color: Peru;  /*Brown; SeaGreen; RoyalBlue; ; */
-  --grad-color:oklch(from var(--accent-color) calc(l * 0.8) c h);
+  --accent-color: DarkSlateGray; 
+  --accent-dark: oklch(from var(--accent-color) calc(l * 0.8) c h);
+  --accent-light: oklch(from var(--accent-color) calc(l * 1.2) c h);
+  --border-color:#777;
   --padding:10px;
   --size:16px
 }
@@ -24,7 +26,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color:SlateGray;
+  background-color:light-dark(#bbb, #333);
   font-size: var(--size);
 }
 
@@ -39,7 +41,8 @@ a:hover {
 }
 
 h2 {
-  color: var(--accent-color);
+  color: light-dark(var(--accent-dark), var(--accent-light));
+  font-weight: normal;
 }
 
 h3 {
@@ -47,7 +50,7 @@ h3 {
 }
 
 pre {
-  border:1px solid #777;
+  border:1px solid var(--border-color);
   padding:var(--padding);
   border-radius: 4px;
   overflow-x:scroll;
@@ -80,7 +83,7 @@ td, th {
   margin:0;
   color:White;
   padding:var(--padding);
-  background: linear-gradient(var(--grad-color) 0%, var(--accent-color) 80%);
+  background: linear-gradient(var(--accent-dark) 0%, var(--accent-color) 80%);
   /*background-color:var(--accent-color); */
   padding-bottom:calc(var(--padding) + 10px)
 
@@ -104,6 +107,10 @@ td, th {
   display:none;
 }
 
+.left {
+  text-align:left;
+}
+
 .right {
   text-align:right;
 }
@@ -115,6 +122,10 @@ td, th {
 .flex {
   display:flex;
   flex-wrap:wrap;
+}
+
+.pad {
+   padding-top: var(--padding);
 }
 
 .hero {
@@ -136,10 +147,11 @@ td, th {
 .hero p, .hero div {
   max-width:500px;
   text-align:center;
+  padding: var(--padding) 0;
 }
 
 .shadow {
-  text-shadow: 0 0 3px var(--grad-color), 0 0 3px var(--grad-color), 0 0 3px var(--accent-color), 0 0 3px var(--accent-color); 
+  text-shadow: 0 0 3px light-dark(var(--accent-light),  var(--accent-dark)), 0 0 3px light-dark(var(--accent-light),  var(--accent-dark)), 0 0 3px var(--accent-color), 0 0 3px var(--accent-color); 
 
 }
 
@@ -154,8 +166,8 @@ td, th {
   padding:  var(--padding);
   width: 360px;
   border-radius: 4px;
-  border: 1px solid SlateGray;
-  min-height:216px;
+  border: 1px solid var(--border-color);
+  min-height:220px;
 }
 
 .card img {
@@ -164,7 +176,12 @@ td, th {
 }
 
 table.ruled td, table.ruled th {
-  border-bottom: 1px solid var(--link-color);
+  border-bottom: 1px solid  #666;
+}
+
+table.hover-row tbody tr:hover {
+    background-color: light-dark(#DDD, #444);
+    cursor: pointer;
 }
 
 ul.ruled {
@@ -175,11 +192,11 @@ ul.ruled {
 
 ul.ruled li {
   padding: 6px;
-  border-top: 1px solid var(--link-color);
+  border-top: 1px solid var(--border-color);
 }
 
 ul.ruled li:last-of-type {
-  border-bottom: 1px solid var(--link-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* ~~~ Navigation Styles ~~~ */
@@ -195,9 +212,8 @@ ul.ruled li:last-of-type {
   padding:var(--padding);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  border: 1px solid SlateGray;
+  border: 1px solid var(--border-color);
   background-color: light-dark( #DDD, #333);
-  font-weight:bold;
 }
 
 .tabs a.active {
@@ -221,7 +237,7 @@ ul.ruled li:last-of-type {
   top:72px;
   z-index:999;
   width:200px;
-  border: 1px solid SlateGray;
+  border: 1px solid var(--border-color);
   border-bottom-width:0;
 }
 
@@ -229,7 +245,7 @@ ul.ruled li:last-of-type {
   display:block;
   font-size:var(--size);
   padding:var(--padding);
-  border-bottom:1px solid SlateGray;
+  border-bottom:1px solid var(--border-color);
   font-family: system-ui, Helvetica, Arial, sans-serif;
 }
 
@@ -260,7 +276,7 @@ input[type=text], input[type=email], input[type=password], input[type=number],
 input[type=datetime], input[type=datetime-local], select, textarea {
   padding: 6px;
   border-radius: 4px;
-  border: 1px solid #999;
+  border: 1px solid var(--border-color);
   font-size: 16px;
   min-width: 300px;
   margin-bottom: var(--padding);
@@ -306,7 +322,7 @@ label.above {
 
 .button:disabled {
   background-color: #888;
-  border: 1px solid #666;
+  border: 1px solid var(--border-color);
   cursor: default;
 }
 
@@ -366,11 +382,10 @@ label.above {
   background-color: var(--background-color);
   margin: 150px auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 400px;
   min-height:300px;
   border-radius: 4px;
-  border: 1px solid #777;
+  border: 1px solid var(--border-color);
   z-index: 999;
 }
 

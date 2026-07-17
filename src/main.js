@@ -6,6 +6,11 @@ window.addEventListener('load',() => {
     const menu = document.querySelector('.hamburger');
     const links = document.querySelectorAll('nav.hamburger a');
     const toggle = document.querySelector('#dark-toggle a');
+    const rows = document.querySelectorAll('tbody tr');
+
+    const setAccent = (c) => {
+    }
+
 
     const show = (id) => {
         const active = document.querySelectorAll('.active');
@@ -46,6 +51,16 @@ window.addEventListener('load',() => {
         let colorScheme = root.style.getPropertyValue('color-scheme');
         colorScheme = (colorScheme == 'dark' ? 'light' : 'dark');
         root.style.setProperty('color-scheme', colorScheme)
+    })
+
+    rows.forEach(row => {
+        const root = document.querySelector(":root");
+        row.addEventListener('click', (e) => {
+            let color = e.currentTarget.id.replace('row-', '');
+            //console.log(color);
+            
+            root.style.setProperty('--accent-color', color);
+        })
     })
 
     document.getElementById('banner-link').addEventListener('click', (e) => show('home-page'));
@@ -98,5 +113,7 @@ window.addEventListener('load',() => {
             menu.classList.remove('hidden')
         }
     })
+
+
 
 })
