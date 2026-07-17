@@ -99,7 +99,6 @@ td, th {
 
 .content {
   padding:0 var(--padding);
-  min-height:600px;
   clear:both;
 }
 
