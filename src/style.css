@@ -17,7 +17,7 @@
   --background-color:light-dark(White, Black);
   --accent-color: DarkSlateGray; 
   --accent-dark: oklch(from var(--accent-color) calc(l * 0.8) c h);
-  --accent-light: oklch(from var(--accent-color) calc(l * 1.2) c h);
+  --accent-light: oklch(from var(--accent-color) calc(l * 1.8) c h);
   --border-color:#777;
   --padding:10px;
   --size:16px
@@ -408,7 +408,6 @@ label.above {
   border-radius: 4px;
   font-size:24px;
   margin:-4px;
-
 }
 
 .x:hover {
