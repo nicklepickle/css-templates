@@ -13,7 +13,7 @@
   color-scheme: light dark;
   text-rendering: optimizeLegibility;
   --color:light-dark(Black, White);
-  --link-color:light-dark(DodgerBlue, DodgerBlue);
+  --link-color:light-dark(oklch(from DodgerBlue calc(l * 0.8) c h), DodgerBlue);
   --background-color:light-dark(White, Black);
   --accent-color: DarkSlateGray; 
   --accent-dark: oklch(from var(--accent-color) calc(l * 0.8) c h);
@@ -42,11 +42,20 @@ a:hover {
 
 h2 {
   color: light-dark(var(--accent-dark), var(--accent-light));
-  font-weight: normal;
+  font-size: calc(var(--size) + 8px);
+  font-weight:500;
 }
 
 h3 {
   margin:0;
+  font-size: calc(var(--size) + 2px);
+  font-weight:500;
+}
+
+h4 {
+  margin:0;
+  font-size: calc(var(--size) );
+  font-weight:500;
 }
 
 pre {
@@ -207,7 +216,8 @@ ul.ruled li:last-of-type {
 }
 
 .tabs a {
-  min-width:8em;
+  min-width:120px;
+  font-size:calc(var(--size) + 2px);
   padding:var(--padding);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
